@@ -9,6 +9,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#define RES_OK   " OK"
+#define RES_BAD  " BAD"
+
 /* the following table is 1Kb large, so it is worth
  * implementing it as such and not worry about its
  * size.  Automaton has 100 states (0..99) and it
@@ -150,8 +153,8 @@ int main(int argc, char **argv)
         printf("%s%s\n",
                 argv[i],
                 luhn_ok(argv[i])
-                    ? "!"
-                    : "?");
+                    ? RES_OK
+                    : RES_BAD);
     } else {
         char buffer[1024];
         while (fgets(buffer, sizeof buffer, stdin)) {
@@ -159,8 +162,8 @@ int main(int argc, char **argv)
             printf("%s%s\n",
                     buffer,
                     luhn_ok(buffer)
-                        ? "!"
-                        : "?");
+                        ? RES_OK
+                        : RES_BAD);
         }
     }
 } /* main */

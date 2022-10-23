@@ -9,6 +9,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#define RES_OK    " OK"
+#define RES_BAD   " BAD"
+
 const static char luhn_tab[][10] = {
 
     /* state 0, accepting state */
@@ -57,8 +60,8 @@ int main(int argc, char **argv)
         printf("%s%s\n",
                 argv[i],
                 luhn_ok(argv[i], strlen(argv[i]))
-                    ? "!"
-                    : "?");
+                    ? RES_OK
+                    : RES_BAD);
     } else {
         char buffer[1024];
         while (fgets(buffer, sizeof buffer, stdin)) {
@@ -66,8 +69,8 @@ int main(int argc, char **argv)
             printf("%s%s\n",
                     buffer,
                     luhn_ok(buffer, strlen(buffer))
-                        ? "!"
-                        : "?");
+                        ? RES_OK
+                        : RES_BAD);
         }
     }
 } /* main */
