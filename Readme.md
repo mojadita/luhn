@@ -49,7 +49,7 @@ To compile these programs, just
 ```
 make
 ```
-and you are done.  `luhn` & `luhn_r2l` take their arguments
+and you are done.  `luhn` & `luhn_rl` take their arguments
 from the command line, or if no arguments are given, from
 the standard input (one per line of input)  Both programs output
 the input string, followed by a `"OK"` or `"BAD"` result code.
